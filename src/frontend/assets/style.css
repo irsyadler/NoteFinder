@@ -205,6 +205,10 @@ body {
     background-color: var(--color-main-one)
 }
 
+#sectionNavigation.highlight .button.transparent .material-icons-round {
+    color: transparent;
+}
+
 #sectionNavigation>div:not(:last-child) {
     margin-right: 1rem;
 }
@@ -571,6 +575,15 @@ body {
 
 #editorInfoFilePath {
     color: var(--color-main-two);
+    user-select: text;
+    cursor: text;
+    font-family: var(--bs-font-monospace);
+    font-size: .875em;
+}
+
+#editorInfoFilePath::selection {
+    color: var(--color-font-light);
+    background: var(--color-main-two);
 }
 
 #editorInfoFilePath:hover {

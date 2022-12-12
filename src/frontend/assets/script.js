@@ -631,51 +631,46 @@ method.action = {
 
     },
     attachDropListener: () => {
+
         // Attach listener to prevent default
-        ['dragenter', 'dragover', 'dragleave', 'drop'].forEach(eventName => {
-            window.addEventListener(eventName, function (event) {
-                event.preventDefault();
-                event.stopPropagation();
-            }, false);
+        $("#sectionNavigation").on("dragenter dragover dragleave drop", null, (event) => {
+            event.preventDefault();
+            event.stopPropagation();
         });
 
         // Attach listener to enable highlight
-        ['dragenter', 'dragover'].forEach(eventName => {
-            window.addEventListener(eventName, function (event) {
-                document.getElementById("sectionNavigation").classList.add('highlight');
-                console.log(event);
-            }, false);
+        $("#sectionNavigation").on("dragenter dragover", null, (event) => {
+            $("#sectionNavigation").addClass("highlight");
         });
 
         // Attach listener to disable highlight
-        ['dragleave', 'drop'].forEach(eventName => {
-            window.addEventListener(eventName, function (event) {
-                document.getElementById("sectionNavigation").classList.remove('highlight');
-            }, false);
+        $("#sectionNavigation").on("dragleave drop", null, (event) => {
+            $("#sectionNavigation").removeClass("highlight");
         });
 
-
         // Attach listener to get the dropped files
-        window.addEventListener("drop", async (event) => {
-            console.log("drop------", event);
+        $("#sectionNavigation").on("drop", null, (event) => {
+
             let fileList = [];
-            for (const file of event.dataTransfer.files) {
+            for (const file of event.originalEvent.dataTransfer.files) {
                 // Using the path attribute to get absolute file path
-                console.log('File Path of dragged files: ', file.path)
+                // console.log('File Path of dragged files: ', file.path)
                 fileList.push(file.path);
             }
 
-            // Set directory path
-            mainData.config.directoryList = fileList;
+            // Trigger only if filelist has content
+            if (fileList.length > 0) {
+                // Set directory path
+                mainData.config.directoryList = fileList;
 
-            // Update UI
-            method.UI.setPath("buttonChooseDirectory", mainData.config.directoryList[0]); // Set initial path
+                // Update UI
+                method.UI.setPath("buttonChooseDirectory", mainData.config.directoryList[0]); // Set initial path
 
-            // Trigger directory check
-            method.action.checkDirectory().then(() => {
-                window.backend.saveConfig(mainData.config);
-            });
-
+                // Trigger directory check
+                method.action.checkDirectory().then(() => {
+                    window.backend.saveConfig(mainData.config);
+                });
+            }
         });
     },
     getEditorInfo: async (event) => {

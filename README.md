@@ -45,7 +45,7 @@ Note: To enable the open-at-page feature, a user needs to click the top-left `�
 
 **Important**: The NoteFinder is tested in Windows and Linux environments. Unexpected bugs might appeared in macOS. 
  
-#### PDF Document Title Editor (Please read before use ⚠️)
+#### PDF Document Title Editor (⚠️ Please read before use ⚠️)
 
 The PDF document editor feature enables users to edit a document's title. It is difficult to do with popular PDF viewers such as Adobe Acrobat Reader, Google Chrome, or Microsoft Edge. However, the edit feature will re-generate the document using [pdf-lib](https://pdf-lib.js.org/). Although it is unlikely, a re-generated document may contain errors or corrupted data where it will no longer be accessible or readable. Hence, NoteFinder will make a backup copy of an original PDF document before the new document title is applied to ensure the original file remains unchanged. The backup file name is similar to the existing document with the ending `.pdf.backup.` To open this backup file, rename the file to remove the `.backup` extension.
 

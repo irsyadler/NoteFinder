@@ -15,10 +15,8 @@
 - Double-click to open: User can **open the annotated PDF document** by double-clicking an annotation.
 - Open-at-page: Open annotated PDF documents **at a specific page number** of the annotation content (for Windows users & Adobe Acrobat Reader).
 - Drag-and-drop a folder containing PDF documents into the application (for Windows user).
-- Optional Features:
-  -  Search PDF documents in subfolders (enabled by default).
-  -  Show the document title (enabled by default). If a PDF document contains `Title` metadata, NoteFinder will show the title instead of the PDF's filename.
-  -  Trim comment's newline (enabled by default). Comment annotation could contain multiple lines. NoteFinder will combine all the lines into a single line.
+- Group Annotations: Group annotations list per PDF document.
+- PDF Document Title Editor: Right-click on a document filename / title to edit the PDF document title.
 
 <p align="center">
   Screenshot of NoteFinder Application:
@@ -47,6 +45,10 @@ Note: To enable the open-at-page feature, a user needs to click the top-left `�
 
 **Important**: The NoteFinder is tested in Windows and Linux environments. Unexpected bugs might appeared in macOS. 
  
+#### PDF Document Title Editor (Please read before use ⚠️)
+
+The PDF document editor feature enables users to edit a document's title. It is difficult to do with popular PDF viewers such as Adobe Acrobat Reader, Google Chrome, or Microsoft Edge. However, the edit feature will re-generate the document using [pdf-lib](https://pdf-lib.js.org/). Although it is unlikely, a re-generated document may contain errors or corrupted data where it will no longer be accessible or readable. Hence, NoteFinder will make a backup copy of an original PDF document before the new document title is applied to ensure the original file remains unchanged. The backup file name is similar to the existing document with the ending `.pdf.backup.` To open this backup file, rename the file to remove the `.backup` extension.
+
 
 ## 🧪 Development & Testing
 NoteFinder is developed and tested on Windows (32/64 bit) environment. But all necessary items (including icon files) are already in place for other platform distributions. To develop and test the NoteFinder, please do the following:

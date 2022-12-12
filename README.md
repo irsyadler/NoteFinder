@@ -21,7 +21,7 @@
 <p align="center">
   Screenshot of NoteFinder Application:
   <br>
-  <img src="https://raw.githubusercontent.com/irsyadler/NoteFinder/main/docs/screenshot.png" width="700" alt="NoteFinder Application Screenshot">
+  <img src="https://raw.githubusercontent.com/irsyadler/NoteFinder/main/docs/screenshot-v0.8.5-1.png" width="700" alt="NoteFinder Application Screenshot">
 </p>
 
 

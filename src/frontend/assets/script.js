@@ -738,10 +738,10 @@ const annotationTableConfig = () => {
         deferRender: true,
         autoWidth: false,
         rowGroup: (mainData.config.groupAnnotations) ? {
-            dataSrc: 2,
+            dataSrc: 0,
             startRender: function (rows, group) {
                 // Add tooltip at rowgroup header
-                return $(`<tr class="dtrg-group dtrg-start dtrg-level-0 editable-data" data-document="${rows.data().pluck(0)[0]}"><th colspan="4" scope="row">${group}</th></tr>`);
+                return $(`<tr class="dtrg-group dtrg-start dtrg-level-0 editable-data" data-document="${group}"><th colspan="4" scope="row">${rows.data().pluck(2)[0]}</th></tr>`);
             },
         } : undefined,
         pageLength: mainData.config.pageLength,
@@ -787,9 +787,8 @@ const annotationTableConfig = () => {
 
             const api = this.api();
             const rows = api.rows({ page: "current" }).nodes();
-            const documentTitleColumn = api.column(2, { page: "current" }).data();
-            const totaldocumentTitleColumn = documentTitleColumn.length;
             const filePathColumn = api.column(0, { page: "current" }).data();
+            const totalFilePathColumn = filePathColumn.length;
 
             // Add class for styling
             // Add transparent bottom row
@@ -798,40 +797,39 @@ const annotationTableConfig = () => {
                 let last = null;
                 let getTopGroup = false;
 
-
-                for (let index = 0; index < totaldocumentTitleColumn; index++) {
+                for (let index = 0; index < totalFilePathColumn; index++) {
                     // Reset all class
                     $(rows).eq(index - 1).removeClass("group-top-row group-bottom-row");
 
-                    if (last === null) { // Avoid first row
-                        $(rows).eq(index).before(`<tr class="group-bottom-transparent-row top-group"><td colspan="4"></td></tr>`);
-                        last = documentTitleColumn[index];
-                        getTopGroup = true;
-
-                    } else if (getTopGroup) { // Get the group-top-row(row after row-grouping)
+                    if (getTopGroup) { // Get the group-top-row(row after row-grouping)
                         // Add group-top styles
                         $(rows).eq(index - 1).addClass("group-top-row");
                         getTopGroup = false; // Reset flag
+
+                    } else if (last === null) { // Get the first row
+                        $(rows).eq(index).before(`<tr class="group-bottom-transparent-row top-group"><td colspan="4"></td></tr>`);
+                        last = filePathColumn[index];
+                        getTopGroup = true;
                     }
 
-                    if (last !== documentTitleColumn[index]) {
+                    if (last !== filePathColumn[index]) {
                         // Add transparent row
                         $(rows).eq(index).before(`<tr class="group-bottom-transparent-row"><td colspan="4"></td></tr>`);
 
                         // Add group-bottom styles
                         $(rows).eq(index - 1).addClass("group-bottom-row");
 
-                        last = documentTitleColumn[index];
+                        last = filePathColumn[index];
                         getTopGroup = true;
                     }
 
-                    if (totaldocumentTitleColumn === (index + 1)) { // Get last row
+                    if (totalFilePathColumn === (index + 1)) { // Get last row
                         // $(rows).eq(index).after(`<tr class="group-last-row"><td colspan="3"></td></tr>`);
                     }
                 }
             } else {
                 // Add tooltip
-                for (let index = 0; index < totaldocumentTitleColumn; index++) {
+                for (let index = 0; index < totalFilePathColumn; index++) {
                     $(rows).eq(index).children().first().addClass("editable-data").attr("data-document", filePathColumn[index]);
                 }
             }

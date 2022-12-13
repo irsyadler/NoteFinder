@@ -14,7 +14,7 @@
 - Keyword Filtering: Users can **type keywords to filter** the comments and highlighted texts.
 - Double-click to open: Users can **open the annotated PDF document** by double-clicking an annotation.
 - Open-at-page: Open annotated PDF documents **at a specific page number** of the annotation content (for Windows users & Adobe Acrobat Reader).
-- **Drag-and-drop** a files or folders containing PDF documents into the application (for Windows users).
+- **Drag-and-drop** a files or folders containing PDF documents into the application's top navigation bar (for Windows users).
 - Group Annotations: Group annotations list per PDF document.
 - **PDF Document Title Editor:** Right-click on a document filename/title to edit the PDF document title.
 
@@ -46,8 +46,7 @@ Note: To enable the open-at-page feature, a user needs to click the top-left `�
 **Important**: The NoteFinder is tested in Windows and Linux environments. Unexpected bugs might appear in macOS. 
  
 #### PDF Document Title Editor (⚠️ Please read before use ⚠️)
-
-The PDF document editor feature enables users to edit a document's title. It is difficult to do with popular PDF viewers such as Adobe Acrobat Reader, Google Chrome, or Microsoft Edge. However, the edit feature will re-generate the document using [pdf-lib](https://pdf-lib.js.org/). Although it is unlikely, a re-generated document may contain errors or corrupted data where it will no longer be accessible or readable. Hence, NoteFinder will make a backup copy of an original PDF document before the new document title is applied to ensure the original file remains unchanged. The backup file name is similar to the existing document with the ending `.pdf.backup.` To open this backup file, rename the file to remove the `.backup` extension.
+The PDF document editor feature enables users to edit a document's title. It is difficult to do with PDF viewers such as Adobe Acrobat Reader, Google Chrome, or Microsoft Edge. However, the edit feature will re-generate the document using [pdf-lib](https://pdf-lib.js.org/). Although it is unlikely, a re-generated document may contain errors or corrupted data where it will no longer be accessible or readable. Hence, NoteFinder will make a backup copy of an original PDF document before the new document title is applied to ensure the original file remains unchanged. The backup file name is similar to the existing document with the ending `.pdf.backup` and is located in the same folder as the existing document. To open this backup file, rename the file to remove the `.backup` extension.
 
 
 ## 🧪 Development & Testing
@@ -79,7 +78,7 @@ NoteFinder store configuration data and logs persistently. These files can be fo
 
 ## 🚩 Limitations
 - The date localisation is not properly tested. A messy date string format might appears based on the user localisation.
-- Currently, right-click context menu for copy/paste/cut operations is disabled. Only keyboard shortcuts ([Windows](https://support.microsoft.com/en-us/topic/keyboard-shortcut-to-copy-and-paste-in-word-e0e561c3-02fe-f256-7b19-dabef7b879e1) / [macOS](https://support.apple.com/en-us/HT209651)) for these operations are enabled.
+- Currently, right-click context menu for copy/paste/cut operations is disabled. Only keyboard shortcuts ([Windows](https://support.microsoft.com/en-us/topic/keyboard-shortcut-to-copy-and-paste-in-word-e0e561c3-02fe-f256-7b19-dabef7b879e1)/[macOS](https://support.apple.com/en-us/HT209651)/[Linux](https://help.gnome.org/users/gnome-terminal/stable/txt-copy-paste.html.en)) for these operations are enabled.
 - NoteFinder uses [PDF.js](https://mozilla.github.io/pdf.js/) version `2.16.105` in legacy mode to [ensure support for Node.js](https://github.com/mozilla/pdf.js/wiki/Frequently-Asked-Questions#legacy-build). This version isn't the latest where NoteFinder might be unable to read a certain type of PDF document. The [PDF.js](https://mozilla.github.io/pdf.js/) version update will be done in the NoteFinder future release.
 - The open-at-page feature **only works for [Adobe Acrobat Reader](https://get.adobe.com/reader/) in Windows**. Further refinement needs to be implemented to support other PDF reader applications and platforms.
 - NoteFinder obtains a highlighted-text annotation by measuring the highlight's rectangle area (`x` & `y` coordinate). Therefore, the following issues arise:

@@ -16,7 +16,7 @@
 - Open-at-page: Open annotated PDF documents **at a specific page number** of the annotation content (for Windows users & Adobe Acrobat Reader).
 - **Drag-and-drop** a files or folders containing PDF documents into the application (for Windows users).
 - Group Annotations: Group annotations list per PDF document.
-- PDF Document Title Editor: Right-click on a document filename/title to edit the PDF document title.
+- **PDF Document Title Editor:** Right-click on a document filename/title to edit the PDF document title.
 
 <p align="center">
   Screenshot of NoteFinder Application:
@@ -80,6 +80,7 @@ NoteFinder store configuration data and logs persistently. These files can be fo
 ## 🚩 Limitations
 - The date localisation is not properly tested. A messy date string format might appears based on the user localisation.
 - Currently, right-click context menu for copy/paste/cut operations is disabled. Only keyboard shortcuts ([Windows](https://support.microsoft.com/en-us/topic/keyboard-shortcut-to-copy-and-paste-in-word-e0e561c3-02fe-f256-7b19-dabef7b879e1) / [macOS](https://support.apple.com/en-us/HT209651)) for these operations are enabled.
+- NoteFinder uses [PDF.js](https://mozilla.github.io/pdf.js/) version `2.16.105` in legacy mode to [ensure support for Node.js](https://github.com/mozilla/pdf.js/wiki/Frequently-Asked-Questions#legacy-build). This version isn't the latest where NoteFinder might be unable to read a certain type of PDF document. The [PDF.js](https://mozilla.github.io/pdf.js/) version update will be done in the NoteFinder future release.
 - The open-at-page feature **only works for [Adobe Acrobat Reader](https://get.adobe.com/reader/) in Windows**. Further refinement needs to be implemented to support other PDF reader applications and platforms.
 - NoteFinder obtains a highlighted-text annotation by measuring the highlight's rectangle area (`x` & `y` coordinate). Therefore, the following issues arise:
   - The highlight annotation might show an empty text because the highlighted's rectangle area was smaller than the text-rectangle area defined in the PDF document.

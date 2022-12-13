@@ -1,7 +1,7 @@
 {
   "name": "notefinder",
   "productName": "NoteFinder",
-  "version": "0.8.5",
+  "version": "0.8.6",
   "description": "Search annotations in PDF documents",
   "main": "src/backend/main.js",
   "author": "Irsyad Ler <contact@irsyad.me> (https://irsyad.me)",

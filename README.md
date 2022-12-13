@@ -45,7 +45,7 @@ Note: To enable the open-at-page feature, a user needs to click the top-left `�
 
 **Important**: The NoteFinder is tested in Windows and Linux environments. Unexpected bugs might appear in macOS. 
  
-#### PDF Document Title Editor (⚠️ Please read before use ⚠️)
+#### ✏️ PDF Document Title Editor (⚠️ Please read before use ⚠️)
 The PDF document editor feature enables users to edit a document's title. It is difficult to do with PDF viewers such as Adobe Acrobat Reader, Google Chrome, or Microsoft Edge. However, the edit feature will re-generate the document using [pdf-lib](https://pdf-lib.js.org/). Although it is unlikely, a re-generated document may contain errors or corrupted data where it will no longer be accessible or readable. Hence, NoteFinder will make a backup copy of an original PDF document before the new document title is applied to ensure the original file remains unchanged. The backup file name is similar to the existing document with the ending `.pdf.backup` and is located in the same folder as the existing document. To open this backup file, rename the file to remove the `.backup` extension.
 
 
@@ -58,18 +58,18 @@ NoteFinder is developed and tested on Windows (32/64 bit) environment. But all n
 3. In the source code directory, run the `npm install` command to install all necessary dependencies.
 4. To start the NoteFinder, run the `npm start` command.
 
-#### Notable Code Structure
+#### 📁 Notable Code Structure
 - The [src/frontend/](src/frontend/) directory contains all the files related to NoteFinder's user interface (renderer process).
 - The [src/backend/](src/backend/) directory contains all the files related to NoteFinder's Node.js environment (main process).
 - The `getPageAnnotation()` function in [src/backend/data.js](src/backend/data.js) defines the annotations data extraction from a PDF document.
 - The [resources/](resources/) directory contains the build resources uses to build the NoteFinder application.
 
-#### Build Application Distribution
+#### 🔨 Build Application Distribution
 - NoteFinder primarily uses [Electron Builder](https://github.com/electron-userland/electron-builder) to generate the application distribution.
 - To build a distribution, run the `npx electron-builder` command inside the source code directory. This command will generate a NoteFinder distribution in the [dist/](dist/) directory.
 - For custom build commands, please refer to [Electron Builder - CLI](https://www.electron.build/cli). 
 
-#### Local Files
+#### ⚓ Local Files
 NoteFinder store configuration data and logs persistently. These files can be found in the following:
 - Windows: `%USERPROFILE%\AppData\Roaming\NoteFinder\`
 - macOS: `~/Library/Application Support/NoteFinder/`

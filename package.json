@@ -4,7 +4,7 @@
   "version": "0.8.6",
   "description": "Search annotations in PDF documents",
   "main": "src/backend/main.js",
-  "author": "Irsyad Ler <contact@irsyad.me> (https://irsyad.me)",
+  "author": "Irsyad Ler <contact@irsyadler.com> (https://www.irsyadler.com)",
   "homepage": "https://github.com/irsyadler/NoteFinder",
   "license": "AGPL-3.0-or-later",
   "scripts": {

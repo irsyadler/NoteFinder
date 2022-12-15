@@ -90,4 +90,4 @@ NoteFinder is available under the [GNU AGPL-3.0](LICENSE) license.
 
 
 ## 📧 Contact 
-For any inquiries please contact: `contact [at] irsyad [dot] me`.
+For any inquiries please contact: `contact [at] irsyadler [dot] com`.

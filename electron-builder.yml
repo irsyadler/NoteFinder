@@ -1,4 +1,4 @@
-appId: "me.irsyad.electron.notefinder"
+appId: "com.irsyadler.app.notefinder"
 productName: "NoteFinder"
 copyright: "Copyright (C) 2022 Irsyad Ler"
 
@@ -23,6 +23,7 @@ files:
   # Custom
   - "!dist"
   - "!docs"
+  - "!build.js"
 
 # Disabled remote build as Electron Build Service is currently unavailable
 remoteBuild: false

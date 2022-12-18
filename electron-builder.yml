@@ -24,6 +24,7 @@ files:
   - "!dist"
   - "!docs"
   - "!build.js"
+  - "!Z/*"
 
 # Disabled remote build as Electron Build Service is currently unavailable
 remoteBuild: false

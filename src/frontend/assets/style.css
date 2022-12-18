@@ -922,8 +922,8 @@ table.dataTable thead>tr>td.sorting_desc_disabled:after {
     cursor: pointer;
 }
 
-#tableAnnotation tbody tr:hover .dbclick-table-row.loading {
-    cursor: wait;
+#tableAnnotation tbody tr .dbclick-table-row.loading {
+    cursor: wait ;
 }
 
 /* Page column */
@@ -994,8 +994,11 @@ table.dataTable thead>tr>td.sorting_desc_disabled:after {
 #tableAnnotation tbody tr.menu-active.dtrg-level-0.dbclick-table-row th {
     background-color: var(--color-main-two);
     color: var(--color-font-light);
-    cursor: pointer;
-    
+    cursor: pointer; 
+}
+
+#tableAnnotation tbody tr.dtrg-level-0.dbclick-table-row.loading:hover th{
+    cursor: wait ;
 }
 
 #tableAnnotation.row-grouping tr.group-bottom-transparent-row td {

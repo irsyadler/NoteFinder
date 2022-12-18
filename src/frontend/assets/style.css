@@ -980,7 +980,6 @@ table.dataTable thead>tr>td.sorting_desc_disabled:after {
 
 /* Row grouping border style ----------------------------- */
 #tableAnnotation.row-grouping tbody tr.dtrg-group.dtrg-level-0 th {
-    /* color: var(--color-dark-secondary); */
     font-weight: 600;
     background: var(--color-background-table);
     color: var(--color-font-dark);
@@ -1063,7 +1062,7 @@ table.dataTable thead>tr>td.sorting_desc_disabled:after {
     /* Prevent weird 0.5rem margin/padding at the bottom */
     overflow: inherit;
     height: 100%;
-    color: var(--color-dark-primary);
+    color: var(--color-font-dark);
     height: 3rem;
 }
 
@@ -1117,7 +1116,7 @@ table.dataTable thead>tr>td.sorting_desc_disabled:after {
 
 
 #tableAnnotation_paginate.dataTables_paginate span.ellipsis {
-    color: var(--color-font-light);
+    color: var(--color-font-dark);
     font-weight: 700;
     padding: 0 0.5rem;
 }

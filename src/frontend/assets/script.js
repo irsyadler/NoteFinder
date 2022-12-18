@@ -694,7 +694,6 @@ method.action = {
             }
         });
     },
-
     getEditorInfo: async (event) => {
 
         if (mainData.activeContextMenu.hasClass("dtrg-level-0") === true) // This is from row-group header row
@@ -914,7 +913,6 @@ method.action = {
             }
         });
     },
-
     resetRowActivatedMenu: () => { // Reset the active-menu class
         // Remove active-menu class
         if (mainData.activeContextMenu !== undefined) {
